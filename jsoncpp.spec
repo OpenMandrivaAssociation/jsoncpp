@@ -1,11 +1,11 @@
 %bcond_with	docs
-%define major	1
+%define major	11
 %define	libname	%mklibname %{name} %{major}
 %define	devname	%mklibname -d %{name}
 
 Summary:	C++ JSON Library
 Name:		jsoncpp
-Version:	1.7.5
+Version:	1.8.0
 Release:	1
 License:	Public Domain
 Group:		System/Libraries
