@@ -1,5 +1,5 @@
 %bcond_with docs
-%define major 11
+%define major 19
 %define	libname %mklibname %{name} %{major}
 %define	devname %mklibname -d %{name}
 
