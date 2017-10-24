@@ -1,16 +1,16 @@
-%bcond_with	docs
-%define major	11
-%define	libname	%mklibname %{name} %{major}
-%define	devname	%mklibname -d %{name}
+%bcond_with docs
+%define major 11
+%define	libname %mklibname %{name} %{major}
+%define	devname %mklibname -d %{name}
 
 Summary:	C++ JSON Library
 Name:		jsoncpp
-Version:	1.8.1
+Version:	1.8.3
 Release:	1
 License:	Public Domain
 Group:		System/Libraries
 Url:		http://jsoncpp.sourceforge.net/
-Source0:	https://github.com/open-source-parsers/jsoncpp/archive/%{version}.tar.gz
+Source0:	https://github.com/open-source-parsers/jsoncpp/archive/%{name}-%{version}.tar.gz
 Patch0:		jsoncpp-1.6.0-work-around-i586-float-inaccuracy.patch
 BuildRequires:	cmake
 BuildRequires:	ninja
@@ -63,13 +63,14 @@ Files for building applications with %{name} support.
 
 %build
 export LD_LIBRARY_PATH=`pwd`/build/src/lib_json:$LD_LIBRARY_PATH
-ninja -C build
+%ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja install -C build
+%ninja_install -C build
 
 %files -n %{libname}
-%{_libdir}/lib%{name}.so.1*
+%{_libdir}/lib%{name}.so.%{major}*
+%{_libdir}/lib%{name}.so.%{version}*
 
 %files -n %{devname}
 %{_libdir}/lib%{name}.so
