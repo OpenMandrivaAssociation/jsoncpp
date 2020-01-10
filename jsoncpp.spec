@@ -53,7 +53,7 @@ Files for building applications with %{name} support.
 
 %prep 
 %setup -q
-%apply_patches
+%autopatch -p1
 %cmake -G Ninja \
 	-DJSONCPP_LIB_BUILD_SHARED:BOOL=ON \
 	-DJSONCPP_LIB_BUILD_STATIC:BOOL=OFF \
