@@ -54,16 +54,17 @@ Files for building applications with %{name} support.
 %prep 
 %setup -q
 %autopatch -p1
+
+%build
 %cmake -G Ninja \
 	-DJSONCPP_LIB_BUILD_SHARED:BOOL=ON \
 	-DJSONCPP_LIB_BUILD_STATIC:BOOL=OFF \
 	-DJSONCPP_WITH_TESTS:BOOL=OFF \
 	-DJSONCPP_WITH_POST_BUILD_UNITTES:BOOL=OFF \
+	-DJSONCPP_WITH_PKGCONFIG_SUPPORT:BOOL=ON \
 	-DJSONCPP_WITH_CMAKE_PACKAGE:BOOL=ON
 
-%build
-export LD_LIBRARY_PATH=`pwd`/build/src/lib_json:$LD_LIBRARY_PATH
-%ninja -C build
+%ninja_build
 
 %install
 %ninja_install -C build
