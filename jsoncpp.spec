@@ -5,12 +5,12 @@
 
 Summary:	C++ JSON Library
 Name:		jsoncpp
-Version:	1.9.3
+Version:	1.9.4
 Release:	1
 License:	Public Domain
 Group:		System/Libraries
 Url:		http://jsoncpp.sourceforge.net/
-Source0:	https://github.com/open-source-parsers/jsoncpp/archive/v%{version}.tar.gz
+Source0:	https://github.com/open-source-parsers/jsoncpp/archive/%{version}.tar.gz
 Patch0:		jsoncpp-1.6.0-work-around-i586-float-inaccuracy.patch
 BuildRequires:	cmake
 BuildRequires:	ninja
@@ -68,6 +68,7 @@ Files for building applications with %{name} support.
 
 %install
 %ninja_install -C build
+rm -rf %{buildroot}/%{_libdir}/objects-RelWithDebInfo
 
 %files -n %{libname}
 %{_libdir}/lib%{name}.so.%{major}*
