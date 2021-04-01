@@ -1,3 +1,6 @@
+# (tpg) reduce bloat by excluding cmake requires on devel packages
+%global __requires_exclude ^cmake.*$
+
 %bcond_with docs
 %define major 24
 %define	libname %mklibname %{name} %{major}
@@ -6,7 +9,7 @@
 Summary:	C++ JSON Library
 Name:		jsoncpp
 Version:	1.9.4
-Release:	1
+Release:	2
 License:	Public Domain
 Group:		System/Libraries
 Url:		http://jsoncpp.sourceforge.net/
