@@ -9,7 +9,7 @@
 Summary:	C++ JSON Library
 Name:		jsoncpp
 Version:	1.9.4
-Release:	2
+Release:	3
 License:	Public Domain
 Group:		System/Libraries
 Url:		http://jsoncpp.sourceforge.net/
@@ -71,7 +71,6 @@ Files for building applications with %{name} support.
 
 %install
 %ninja_install -C build
-rm -rf %{buildroot}/%{_libdir}/objects-RelWithDebInfo
 
 %files -n %{libname}
 %{_libdir}/lib%{name}.so.%{major}*
@@ -79,6 +78,7 @@ rm -rf %{buildroot}/%{_libdir}/objects-RelWithDebInfo
 
 %files -n %{devname}
 %{_libdir}/lib%{name}.so
+%{_libdir}/objects-RelWithDebInfo
 %{_includedir}/json
 %{_libdir}/cmake/jsoncpp
 %{_libdir}/pkgconfig/*.pc
