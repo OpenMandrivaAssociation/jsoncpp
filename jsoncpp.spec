@@ -71,7 +71,6 @@ Files for building applications with %{name} support.
 
 %install
 %ninja_install -C build
-#rm -rf %{buildroot}/%{_libdir}/objects-RelWithDebInfo
 
 %files -n %{libname}
 %{_libdir}/lib%{name}.so.%{major}*
