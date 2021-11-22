@@ -2,14 +2,14 @@
 %global __requires_exclude ^cmake.*$
 
 %bcond_with docs
-%define major 24
+%define major 25
 %define	libname %mklibname %{name} %{major}
 %define	devname %mklibname -d %{name}
 
 Summary:	C++ JSON Library
 Name:		jsoncpp
-Version:	1.9.4
-Release:	3
+Version:	1.9.5
+Release:	1
 License:	Public Domain
 Group:		System/Libraries
 Url:		http://jsoncpp.sourceforge.net/
@@ -19,12 +19,12 @@ BuildRequires:	cmake
 BuildRequires:	ninja
 #To generate docs
 %if %{with docs}
-BuildRequires:	doxygen 
+BuildRequires:	doxygen
 BuildRequires:	graphviz
 %endif
 
 %description
-JsonCpp is a simple API to manipulate JSON value, handle serialization 
+JsonCpp is a simple API to manipulate JSON value, handle serialization
 and unserialization to string.
 
 It can also preserve existing comment in unserialization/serialization steps,
@@ -37,7 +37,7 @@ Summary:	JsonCpp library
 Group:		System/Libraries
 
 %description -n	%{libname}
-JsonCpp is a simple API to manipulate JSON value, handle serialization 
+JsonCpp is a simple API to manipulate JSON value, handle serialization
 and unserialization to string.
 
 It can also preserve existing comment in unserialization/serialization steps,
@@ -54,7 +54,7 @@ Requires:	%{libname} = %{EVRD}
 %description -n	%{devname}
 Files for building applications with %{name} support.
 
-%prep 
+%prep
 %setup -q
 %autopatch -p1
 
