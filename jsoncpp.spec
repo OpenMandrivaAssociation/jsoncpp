@@ -7,15 +7,14 @@
 %define	oldlibname %mklibname %{name} %{major}
 
 %bcond_with docs
-# (mandian) jsoncpp_static is required by liblinphone
-%bcond_without	static
+%bcond_with	static
 
 # Intentionally unversioned, because libname should not contain version number
 
 Summary:	C++ JSON Library
 Name:		jsoncpp
 Version:	1.9.5
-Release:	2
+Release:	3
 License:	Public Domain
 Group:		System/Libraries
 Url:		https://github.com/open-source-parsers
