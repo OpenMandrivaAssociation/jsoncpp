@@ -14,7 +14,7 @@
 Summary:	C++ JSON Library
 Name:		jsoncpp
 Version:	1.9.5
-Release:	3
+Release:	4
 License:	Public Domain
 Group:		System/Libraries
 Url:		https://github.com/open-source-parsers
