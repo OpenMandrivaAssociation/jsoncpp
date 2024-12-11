@@ -1,7 +1,7 @@
 # (tpg) reduce bloat by excluding cmake requires on devel packages
 #%%global __requires_exclude ^cmake.*$
 
-%define major 25
+%define major 26
 %define	libname %mklibname %{name}
 %define	devname %mklibname %{name} -d
 %define	oldlibname %mklibname %{name} %{major}
@@ -13,12 +13,12 @@
 
 Summary:	C++ JSON Library
 Name:		jsoncpp
-Version:	1.9.5
-Release:	4
+Version:	1.9.6
+Release:	1
 License:	Public Domain
 Group:		System/Libraries
 Url:		https://github.com/open-source-parsers
-Source0:	https://github.com/open-source-parsers/jsoncpp/archive/%{version}.tar.gz
+Source0:	https://github.com/open-source-parsers/jsoncpp/archive/%{version}/%{name}-%{version}.tar.gz
 Patch0:		jsoncpp-1.6.0-work-around-i586-float-inaccuracy.patch
 BuildRequires:	cmake
 BuildRequires:	ninja
